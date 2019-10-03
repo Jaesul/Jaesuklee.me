@@ -56,7 +56,7 @@ body {
   background: url("images/food_home.jpg");
 }
 
-.home, .food, .food-1, .food-2 {
+.home, .food {
   height: 100vh;
   position: relative;
   background-attachment: fixed;
@@ -136,9 +136,15 @@ section:before,
   text-align: right;
 }
 
-.content-col .about-img {
+.content-col-right {
+  float: right;
+  width: 40%;
+  text-align: left;
+}
+
+.content-col-right .about-img {
   margin-top: 12px;
-  width: 300px;
+  width: 100%;
 }
 
 .content-col p {
@@ -147,16 +153,10 @@ section:before,
   line-height: 24px;
 }
 
-.content-col-left {
-  float: right;
-  width: 50%;
-  text-align: left;
-}
-
-.content-col .class-img {
-  width: 93px;
-  margin-left: 5px;
-  margin-top: 13px;
+.content-col-right .class-img {
+  width: 30%;
+  margin-right: 2%;
+  margin-top: 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -187,7 +187,7 @@ li {
 }
 
 ol {
-  padding-left: 80px;
+  padding: 0;
   margin-bottom: 0;
   margin-top: 5px;
 }
@@ -217,15 +217,16 @@ blockquote {
 }
 
 blockquote p {
+  text-align: left;
   font-style: italic;
   margin: 0;
-  margin-top: -1.5em;
-  padding-left: 80px;
+  padding-left: 0;
   padding-bottom: 10px;
+  color: rgb(121, 120, 120);
 }
 
 blockquote footer {
-  padding-left: 25px;
+  padding-left: 10%;
 }
 
 footer p {
