@@ -1,18 +1,3 @@
-/*
-  Jaesuk Lee
-  9/29/19
-  AB / Hudson Gilmore
-
-  This is my css file for the about page and food blog. The main notable stylings I've done are
-  modifying the scrollbar, using a muted blue, dark grey, and white color pallete, and created
-  div columns to create a two column layout.
-*/
-
-/*
-  Remember: This body ruleset is to get you started, but does not count
-  towards the CP requirements!
-*/
-
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
 
 html {
@@ -37,18 +22,16 @@ html {
 
 body {
   display: block;
-  margin-right: 20%;
-  margin-left: 20%;
-  margin-top: 0;
-  margin-bottom: 0;
-  width: 60%;
+  margin: 0;
+  padding:  0;
+  flex-basis: 100%;
   font-family: 'Open Sans', sans-serif;
   color: rgba(56, 56, 56);
 }
 
 .home {
   /* Photo by Clay Banks on Unsplash */
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("images/main_picture_1.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/main_picture_1.jpg");
 }
 
 .food {
@@ -56,7 +39,11 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("images/food_home.jpg");
 }
 
-.home, .food {
+.projects {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),url("images/projects.jpg");
+}
+
+.home, .food, .projects {
   height: 100vh;
   position: relative;
   background-attachment: fixed;
@@ -66,20 +53,19 @@ body {
 }
 
 header {
-  text-align: center;
-}
-
-nav {
-  padding-right: 1.2em;
+  padding: 2em 0 0 0;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
 }
 
 nav ul {
   margin: 0;
+  padding: 0;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 15px;
   letter-spacing: 1px;
-  padding: 2em 0 0 0;
 }
 
 nav li {
@@ -89,11 +75,13 @@ nav li {
 }
 
 a {
-  text-decoration: none;
+  padding: 0;
   margin: 0;
+  text-decoration: none;
 }
 
 nav a {
+  line-height: 1em;
   color: white;
 }
 
@@ -105,58 +93,42 @@ nav a:hover {
   color: rgba(255, 255, 255, 0.4);
 }
 
-section:after,
-section:before,
-.container:after,
-.container:before,
-.food-content-container:after,
-.food-content-container:before {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 .spacing-50px {
   height: 50px;
-}
-
-.container {
-  padding-top: 4em;
+  width: 100%;
 }
 
 .food-content-container {
-  padding-top: 2.5em;
-  padding-bottom: 2.5em;
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  padding-top: 4em;
   text-align: center;
-}
-
-.content-col {
-  float: left;
-  width: 50%;
-  text-align: right;
-}
-
-.content-col-right {
-  float: right;
-  width: 40%;
-  text-align: left;
+  flex-wrap: wrap;
 }
 
 .content-col-right .about-img {
-  margin-top: 12px;
-  width: 100%;
+  margin-right: 25%;
+  margin-left: 25%;
+  width: 50%;
 }
 
 .content-col p {
   color: rgb(121, 120, 120);
   padding-top: 2em;
   line-height: 24px;
+  font-size: .8rem;
 }
 
-.content-col-right .class-img {
+.content-col-right-items a {
   width: 30%;
-  margin-right: 2%;
-  margin-top: 2%;
+}
+
+.content-col-right-items .class-img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -204,7 +176,7 @@ ol li a:link, ol li a:visited {
   color: #72A1E5;
 }
 
-ol li a:hover, .content-col a img:hover {
+ol li a:hover, a img:hover {
   opacity: 0.3;
 }
 
@@ -217,7 +189,6 @@ blockquote {
 }
 
 blockquote p {
-  text-align: left;
   font-style: italic;
   margin: 0;
   padding-left: 0;
@@ -252,5 +223,39 @@ footer p {
 
   .food{
     height: 75vh;
+  }
+}
+
+@media(min-width:786px) {
+  .container {
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    padding-top: 4em;
+  }
+
+  .content-col {
+    width: 50%;
+    text-align: left;
+  }
+  
+  .content-col-right {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .content-col-right-items {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .content-col-right .about-img {
+    margin-left: 0;
+    margin-right: 0;
+    width: 80%;
   }
 }

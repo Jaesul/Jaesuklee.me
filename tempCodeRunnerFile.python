@@ -1,0 +1,8 @@
+binList = [0,1,1,0,1,1,0]
+
+# Iterate over binList. If the current item equals 1
+# print "One". Otherwise, don't print anything.
+
+for x in binList:
+    if binList[x] == 1:
+        print ("One")
