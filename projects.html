@@ -19,24 +19,156 @@
         </header>
     </div>
 
-    <div class="container">
+    <div class="portfolio-items">
         <h1>UX/UI Projects</h1>
     </div>
 
-    <div class="container">
+    <div class="portfolio-items">
         <h1>Coding Projects</h1>
     </div>
 
-    <div class="container">
+    <div class="portfolio-items">
         <h1>Physical and Visual Design Projects</h1>
-        <a href=""><img src="images/projects.jpg" alt=""></a>
+        <div class="item-container">         
+            <button class="modal-btn" data-target="project1" data-myproperty="value">
+                <div class="overlay">
+                    <h2>OXO Handheld Screwdriver Prototype</h2>
+                </div>
+                <img src="images/projects.jpg" alt="">
+            </button>
+        </div>
+        <!-- <div class="item-container">         
+            <button class="modal-btn" data-target="project2">
+                <div class="overlay">
+                    <h2>OXO Handheld Screwdriver Prototype</h2>
+                </div>
+                <img src="images/projects.jpg" alt="">
+            </button>
+        </div> -->
     </div>
 
+    <div class="modal-bg" id="project1">
+        <div class="modal">
+            <div class="container">
+                <h2>OXO Handheld Screwdriver Prototype</h2>
+                <div class="side-by-side">
+                    <div class="content">
+                        <img src="images/projects.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> Project Details </h3>
+                        <p>
+                            OXO, the well-known kitchen equipment company, innovated the 
+                            industry by designing tools with universality in mind. 
+                            This prototype takes OXO’s design philosophy and pairs it with a handheld screwdriver. 
+                        </p>
+                    </div>
+                </div>
+                <div class="side-by-side">
+                    <div class="content">
+                        <h3>Research</h3>
+                        <p>
+                            The first step in creating a prototype based on OXO’s design principals is to know what they are. Smart Design, OXO’s equipment designer, states a simple ethos when designing products.  
+                        </p>
+                        <blockquote>
+                            <p>
+                                With Smart’s help, the OXO brand has continued to expand and evolve while remaining true to one simple but powerful idea: create products that make everyday life easier.
+                            </p>
+                        </blockquote>
+                        <p>
+                            This manifests in a few design guidelines
+                        </p>
+                        <ul class="base-ul">
+                            <li class="non-nested">
+                                Universal Design 
+                                <ul class="nested-ul">
+                                    <li class="nested">The product should be accessible to a broad range of users </li>
+                                </ul>
+                            </li>
+                            <li class="non-nested">
+                                Simplicity 
+                                <ul class="nested-ul">
+                                    <li class="nested">Simple black and silver products </li>
+                                </ul>
+                            </li>
+                            <li class="non-nested">
+                                Making Electric Meaningful  
+                                <ul class="nested-ul">
+                                    <li class="nested">Simplify not complicate</li>
+                                    <li class="nested">Give what the user needs, no extra bells and whistles</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content">                      
+                        <img src="images/projects.jpg" alt="">
+                        <img src="images/projects.jpg" alt="">
+                    </div>
+                </div>
+                <div class="side-by-side">
+                    <div class="content">
+                        <img src="images/projects.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Designing</h3>
+                        <p>
+                            I started out by looking at images of existing OXO 
+                            products in their Good Grips line. I found that nearly 
+                            all products in this range had these characteristics.  
+                        </p>
+                        <ul class="base-ul">
+                            <li class="non-nested">Solid large radius ovular handle </li>
+                            <li class="non-nested">Solid color (black)</li>
+                            <li class="non-nested">Simplictic, nothing special, no gimmicks</li>
+                        </ul>
+                        <p>
+                            
+                        </p>
+                    </div>
+                </div>
+                <span class="modal-close">X</span>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modal-bg" id="project2">
+        <div class="modal">
+            <div class="container">
+                <h2>Test</h2>
+                <div class="side-by-side">
+                    <img src="images/projects.jpg" alt="">
+                    <div class="content">
+                        <h3> Project Details </h3>
+                        <p>
+                            OXO, the well-known kitchen equipment company, innovated the 
+                            industry by designing tools with universality in mind. 
+                            This prototype takes OXO’s design philosophy and pairs it with a handheld screwdriver. 
+                        </p>
+                    </div>
+                </div>
+                <div class="side-by-side">
+                    <div class="content">
+                        <h3> Research </h3>
+                        <p>
+                            The first step in creating a prototype based on OXO’s design principals is to know what they are. Smart Design, OXO’s equipment designer, states a simple ethos when designing products.  
+                        </p>
+                        <blockquote>
+                            <p>
+                                With Smart’s help, the OXO brand has continued to expand and evolve while remaining true to one simple but powerful idea: create products that make everyday life easier.
+                            </p>
+                        </blockquote>
+                    </div>
+                    <img src="images/projects.jpg" alt="">
+                </div>
+                <span class="modal-close">X</span>
+            </div>
+        </div>
+    </div> -->
     <footer>
         <p>
             Portions of this page ©2019 Jaesuk Lee, other attribution cited in page source
         </p>
     </footer>
+    <script src="custom.js"></script>
 </body>
 </html>
 
