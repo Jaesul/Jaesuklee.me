@@ -189,6 +189,7 @@ br {
 
 blockquote {
   margin: 0;
+  color: rgb(121, 120, 120);
 }
 
 blockquote p {
@@ -196,7 +197,6 @@ blockquote p {
   margin: 0;
   padding-left: 0;
   padding-bottom: 10px;
-  color: rgb(121, 120, 120);
 }
 
 blockquote footer {
@@ -299,18 +299,30 @@ footer p {
   margin-bottom: 1.5vh;
 }
 
-.content p{
-  margin-top: 10vh;
-  margin-bottom: 0;
+.main-content {
+  width: 100%;
+}
+
+.main-content h3 {
+  font-size: 2em;
+}
+
+video {
+  width: 100%;
+  padding: 8vh 0;
+}
+
+.content p {
+  margin-bottom: 5vh;
   line-height: 1.5em;
 }
 
-.side-by-side h3 {
+.modal h3 {
   width: 100%;
   font-size: 1.5em;
   padding-top: 0;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 7.5vh;
 }
 
 .modal blockquote {
@@ -318,9 +330,9 @@ footer p {
 }
 
 .modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  position: fixed;
+  top: 30px;
+  right: 60px;
   font-weight: bold;
   cursor: pointer;
   transition: visibility 0s, opacity 0.3s; 
@@ -386,6 +398,11 @@ button:hover .overlay {
   width: 85%;
 }
 
+.h-10vh{
+  height: 10vh;
+  width: 100%;
+}
+
 .item-container img {
   display: block;
   position: relative;
@@ -394,13 +411,7 @@ button:hover .overlay {
   object-fit: cover;
 }
 
-@media only screen and (max-width: 800px) {
-  body {
-    width: 80%;
-    margin-right: 10%;
-    margin-left: 10%;
-  }
-
+@media only screen and (max-width: 800px) {   
   .home {
     height: 75vh;
   }
