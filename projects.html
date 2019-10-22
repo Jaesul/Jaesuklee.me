@@ -30,21 +30,21 @@
     <div class="portfolio-items">
         <h1>Physical and Visual Design Projects</h1>
         <div class="item-container">         
-            <button class="modal-btn" data-target="project1" data-myproperty="value">
+            <button class="modal-btn" data-target="project1">
                 <div class="overlay">
                     <h2>OXO Handheld Screwdriver Prototype</h2>
                 </div>
                 <img src="images/projects.jpg" alt="">
             </button>
         </div>
-        <!-- <div class="item-container">         
+        <div class="item-container">         
             <button class="modal-btn" data-target="project2">
                 <div class="overlay">
-                    <h2>OXO Handheld Screwdriver Prototype</h2>
+                    <h2>Laser Cut Laptop|Tablet Stand</h2>
                 </div>
-                <img src="images/projects.jpg" alt="">
+                <img src="images/project-laser.jpg" alt="">
             </button>
-        </div> -->
+        </div>
     </div>
 
     <div class="modal-bg" id="project1">
@@ -201,39 +201,108 @@
             </div>
         </div>
     </div>
-    <!-- <div class="modal-bg" id="project2">
+    <div class="modal-bg" id="project2">
         <div class="modal">
             <div class="container">
-                <h2>Test</h2>
+                <h2>Laser Cut Laptop|Tablet Stand</h2>
                 <div class="side-by-side">
-                    <img src="images/projects.jpg" alt="">
                     <div class="content">
-                        <h3> Project Details </h3>
+                        <img src="images/project-laser-1.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Project Details</h3>
                         <p>
-                            OXO, the well-known kitchen equipment company, innovated the 
-                            industry by designing tools with universality in mind. 
-                            This prototype takes OXO’s design philosophy and pairs it with a handheld screwdriver. 
+                            Laser cutting, it’s amazing how fricking precise it is. This project was to create a laser cut object out of chipboard, a dense cardboard-like material 0.055mm thick. This object had a few design requirements.
+                        </p>
+                        <ul class="base-ul">
+                            <li class="nested">Must be cut from a single sheet of chip board 18 x 21 in</li>
+                            <li class="nested">Must not use any glue or tape to assemble</li>
+                            <li class="nested">Must be able to be disassembled into pieces and stored flat</li>
+                            <li class="nested">Must support the weight of a mobile device</li>
+                        </ul>
+                        <p>
+                            At first these requirements seemed unreasonable. I felt like it had a cheap feeling about it, like trying to drop an egg from a high place protecting it with just a few sheets of paper. But since I had the chance to learn new software and hardware, I just went along. 
                         </p>
                     </div>
                 </div>
                 <div class="side-by-side">
                     <div class="content">
-                        <h3> Research </h3>
+                        <h3>Ideation</h3>
                         <p>
-                            The first step in creating a prototype based on OXO’s design principals is to know what they are. Smart Design, OXO’s equipment designer, states a simple ethos when designing products.  
+                            Then I realized how hard it would be. The model that was introduced to get our juices flowing was made of wood that joined at the corners, which would never work with the chipboard. I was pretty heated for a while until I saw a model that used chipboard to create a little phone stand. The stand along the width had slats that maintained the shape, while along the height had slats in the shape of rectangles to support it structurally. 
                         </p>
-                        <blockquote>
-                            <p>
-                                With Smart’s help, the OXO brand has continued to expand and evolve while remaining true to one simple but powerful idea: create products that make everyday life easier.
-                            </p>
-                        </blockquote>
+                        <p>
+                            With this idea I sketched out some ideas and began making a first draft, cutting out the chipboard with a knife. During the sketching process I thought of those “Waste Not” posters for lumber. The image shows how a single log of wood is turned into various types of lumber. I wanted to follow this ethos and tried to maximize the use of the chipboard through orientation of each piece and their shape. These first iterations came out better than I expected. With the rough cuts I made the model was able to hold up my laptop, not securely that is. I then moved over to 2d modeling to start the process of cutting on the chipboard.
+                        </p>
                     </div>
-                    <img src="images/projects.jpg" alt="">
+                    <div class="content">
+                        <img src="images/laser-sketch.jpg" alt="">
+                        <img src="images/laser-hand-cut.jpg" alt="">
+                    </div>
                 </div>
+                <div class="side-by-side">
+                    <div class="content">
+                        <h3>Designing</h3>
+                        <p>
+                            I decided to use Solidworks because it’s what I’m familiar. And because I tried rhino and it was beyond difficult to use. It was almost like it’s a software made for just CAD engineers. The modeling process was fairly pain free; I’ll say that was due to the first draft I made without the laser printer. I exported the file from Solidworks to illustrator to color the lines to the appropriate color, red for cutting, blue for scoring, and black for rasterizing. 
+                        </p>
+                    </div>
+                    <div class="content">
+                        <img src="images/laser-solidworks.png" alt="">
+                    </div>
+                </div>
+                <div class="side-by-side">
+                    <div class="content">
+                        <img src="images/laser-hand-cut.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Cutting</h3>
+                        <p>
+                            I went to the laser cutter and cut out the pieces and slotted them together. After trying to fit them together I realized that the interference between the cuts makes the stand bow too much. Initially I thought that the interference between when slotting together the pieces would help the stand be more stable, but it turned out otherwise. 
+                        </p>
+                    </div>
+                </div>
+                <div class="side-by-side">
+                    <div class="content">
+                        <h3>Revising</h3>
+                        <p>
+                            To fix this issue I made each cut 0.55mm wide, the width of the chipboard, to make sure that there was no interference between parts. This solved the issue and allowed the pieces to fit together without any issues. I also rasterized a logo on the front.
+                        </p>
+                        <p>
+                            After demoing my stand with some testers, I revised the design. The users stated that the stop that held the tablet/ laptop in place was too flimsy and needed to be bolstered. To address this I added another horizontal support and widened the area. 
+                        </p>
+                    </div>
+                    <div class="content">
+                        <img src="images/laser-illustrator.png" alt="">
+                    </div>
+                </div>
+                <div class="side-by-side">
+                    <div class="content">
+                        <h3>Takeaways</h3>
+                        <p>
+                            If I could do this project over, I would make sure that I’m consulting people who are familiar with the subject matter. I tried to watch videos to learn software like I always do but there were too many gaps in the instruction of the video. There were staff members that were there to help but I wanted to do it myself. Save the headache and just ask.
+                        </p>
+                        <ul class="base-ul">
+                            <li class="normal">Simplicity is king. No need to make things more difficult than it needs </li>
+                            <li class="normal">
+                                Look at examples of others. You don’t have to try to be original with everything. An improvement to anexisting idea is just as good. Using someone else’s ideas isn’t a bad thing.
+                            </li>
+                            <li class="normal">
+                                Be prepared to spend a lot of time at the lab. I was there almost every night the lab was open.
+                            </li>
+                            <li class="normal">
+                                If you like what you’re doing be prepared to meet people that are excited about what you’re doing. I met so many talented people working at the lab while working on this project. 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <img src="images/laser-final.jpg" alt="" style="transform: rotate(90deg);">
+                    </div>
+                </div>   
                 <span class="modal-close">X</span>
             </div>
         </div>
-    </div> -->
+    </div>
     <footer>
         <p>
             Portions of this page ©2019 Jaesuk Lee, other attribution cited in page source

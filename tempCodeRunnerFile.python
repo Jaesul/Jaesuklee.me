@@ -1,0 +1,3 @@
+dictionary = {"carnivor" : {"t-rex":2}}
+
+print(dictionary)

@@ -1,7 +1,11 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
 
-html {
+html, .modal-bg, .item-container img {
   height: 100%;
+}
+
+img {
+  image-orientation: from-image;
 }
 
 ::-webkit-scrollbar {
@@ -21,14 +25,19 @@ html {
 }
 
 body {
-  position: relative;
-  float: left;
-  display: block;
-  margin: 0;
-  padding:  0;
-  width: 100%;
-  font-family: 'Open Sans', sans-serif;
   color: rgba(56, 56, 56);
+}
+
+body, .modal-add-blog input, .modal-add-blog textarea {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body, nav ul, a, h2, blockquote {
+  margin: 0;
+}
+
+main  section:nth-child(2n + 1) {
+  background-color: rgb(242, 242, 242);
 }
 
 .home {
@@ -45,29 +54,31 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),url("images/projects.jpg");
 }
 
-.home, .food, .projects {
-  height: 100vh;
-  position: relative;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+header, .food-content-container, .modal-bg, .modal .container, .side-by-side, .side-by-side .content,
+.overlay {
+  display: flex;
+}
+
+header, .food-content-container, .modal-bg, .overlay {
+  justify-content: center;
 }
 
 header {
   padding: 2em 0 0 0;
-  display: flex;
-  justify-content: center;
   z-index: 2;
 }
 
-nav ul {
-  margin: 0;
+nav ul, a, ol, .container h2, button, fieldset {
   padding: 0;
-  text-transform: uppercase;
+}
+
+nav ul, h1, h2, h3, .modal-close {
   font-weight: bold;
+}
+
+nav ul {
+  text-transform: uppercase;
   font-size: 15px;
-  letter-spacing: 1px;
 }
 
 nav li {
@@ -76,9 +87,7 @@ nav li {
   display: inline-block;
 }
 
-a {
-  padding: 0;
-  margin: 0;
+a, button {
   text-decoration: none;
 }
 
@@ -97,27 +106,38 @@ nav a:hover {
 
 .spacing-50px {
   height: 50px;
-  width: 100%;
+}
+
+main, .food-content-container, #add-blog-btn {
+  margin: auto;
+}
+
+main {
+  width: 90%;
+} 
+
+.food-content-container, footer p, button {
+  text-align: center;
 }
 
 .food-content-container {
-  width: 80%;
-  margin: auto;
-  justify-content: center;
-  display: flex;
   padding-top: 4em;
-  text-align: center;
-  flex-wrap: wrap;
+} 
+
+.food-content-container img, .food-content-container, .modal-add-blog input, .modal-add-blog textarea {
+  width: 80%;
 }
 
 .content-col-right .about-img {
   margin-right: 25%;
   margin-left: 25%;
+}
+
+.content-col-right .about-img, .modal-add-blog {
   width: 50%;
 }
 
 .content-col p {
-  color: rgb(121, 120, 120);
   padding-top: 2em;
   line-height: 24px;
   font-size: .8rem;
@@ -127,34 +147,24 @@ nav a:hover {
   width: 30%;
 }
 
-.content-col-right-items .class-img {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+h2, .food-content-container h1 {
+  font-size: 27px;
 }
 
 .food-content-container h1 {
-  padding-bottom: 0.5em;
-  margin: 0;
-  font-size: 27px;
+  margin-bottom: 0.5;
 }
 
-h1, h2, h3 {
-  font-weight: bold;
+h1, h2, h3, nav ul {
   letter-spacing: 1px;
 }
 
-h1 {
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 50px;
-  font-size: 35px;
+h1, footer p {
+  margin-bottom: 50px
 }
 
-h2 {
-  margin: 0;
-  font-size: 27px;
+h1 {
+  font-size: 35px;
 }
 
 li {
@@ -162,8 +172,6 @@ li {
 }
 
 ol {
-  padding: 0;
-  margin-bottom: 0;
   margin-top: 5px;
 }
 
@@ -171,7 +179,7 @@ ol li {
   margin-bottom: 20px;
 }
 
-ol li:nth-child(5) {
+ol li:nth-child(5), ol {
   margin-bottom: 0;
 }
 
@@ -187,14 +195,12 @@ br {
   margin-bottom: 1em;
 }
 
-blockquote {
-  margin: 0;
-  color: rgb(121, 120, 120);
+blockquote, .content-col p {
+  color: rgb(120, 120, 120);
 }
 
 blockquote p {
   font-style: italic;
-  margin: 0;
   padding-left: 0;
   padding-bottom: 10px;
 }
@@ -205,80 +211,144 @@ blockquote footer {
 
 footer p {
   margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;
 }
 
-.width-100 {
-  width: 100%;
+.modal-bg, .side-by-side, .overlay {
+  align-items: center;
+}
+
+.modal-bg, .overlay {
+  left: 0;
+  top: 0;
 }
 
 .modal-bg {
   z-index: 10000;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   visibility: hidden;
-  opacity: 0;
   transition: all ease 500ms;
+}
+
+.modal-bg, .overlay {
+  opacity: 0;
+}
+
+.bg-active, button:hover .overlay {
+  opacity: 1;
 }
 
 .bg-active {
   visibility: visible;
-  opacity: 1;
 }
 
-.modal {
-  position: relative;
-  background-color: white;
-  width: 95%;
-  height: 90vh;
+.modal, .modal-add-blog {
+  
   overflow-y: auto; 
 }
 
-.modal .container {
+.modal {
+  border-radius: 8px;
+  width: 95%; 
+}
+
+.modal, .modal-add-blog {
+  height: 90vh;
+}
+
+.modal, .modal-add-blog, button { 
+  background-color: white;
+}
+
+.modal-add-blog {
+  border-radius: 10px;
+}
+
+.modal-add-blog main {
+  padding: 6vh 0;
+}
+
+.modal-add .blog-content, .modal-add-blog main, .overlay h2 {
   width: 85%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+}
+
+.modal .container { 
+  width: 93%;
+}
+
+.modal-add-blog button, .modal-add-blog input, .modal-add-blog textarea {
+  margin-top: 5vh;
+}
+
+.modal-add-blog button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 5px 20px;
+  font-size: 1.3em;
+}
+
+.modal-add-blog button:hover {
+  transition: opacity 0.2s; 
+}
+
+.modal-add-blog input, .modal-add-blog textarea, #add-blog-btn, .item-container img {
+  display: block;
+}
+
+.modal-add-blog input, .modal-add-blog textarea {
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  resize: none;
+  padding: 2vh 0 2vh 2vh;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.modal-add-blog textarea {
+  height: 20vh;
+} 
+
+.modal .container {
   padding-top: 0;
+}
+
+.modal .container {
+  flex-direction: column;
 }
 
 .container h2 {
   margin: 10vh 0 10vh 0;
-  padding: 0;
   font-size: 2.2em;
   line-height: 2em;
-  width: 100%;
   text-align: left;
 }
 
 .side-by-side {
-  width: 100%;
-  display: flex;
+  padding: 0 2vw 0 2vw;
   justify-content: space-between;
-  align-items: flex-start;
   margin: 5vh 0 10vh 0;
 }
 
-.content img {
-  width: 100%;
+.content img {  
   align-self: center;
   margin-bottom: 12vh;
+  margin-top: 12vh;
+}
+
+.side-by-side .content, .modal .container, .food-content-container {
+  flex-wrap: wrap;
 }
 
 .side-by-side .content {
   width: 45%;
-  margin: 0;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
+}
+
+.modal .side-by-side:nth-child(2n) {
+  background-color: rgb(245, 245, 245);
+}
+
+.normal {
+  margin-bottom: 3.5vh;
+  list-style-type: disc;
 }
 
 .base-ul {
@@ -299,17 +369,8 @@ footer p {
   margin-bottom: 1.5vh;
 }
 
-.main-content {
-  width: 100%;
-}
-
 .main-content h3 {
   font-size: 2em;
-}
-
-video {
-  width: 100%;
-  padding: 8vh 0;
 }
 
 .content p {
@@ -317,11 +378,13 @@ video {
   line-height: 1.5em;
 }
 
-.modal h3 {
-  width: 100%;
-  font-size: 1.5em;
-  padding-top: 0;
+.modal h3, h1 {
   margin-top: 0;
+}
+
+.modal h3 {
+  margin-top: 7.5vh;
+  font-size: 1.5em;
   margin-bottom: 7.5vh;
 }
 
@@ -329,23 +392,22 @@ video {
   margin: 0 2.5vw;
 }
 
+.modal-close, .item-container, button, #add-blog-btn:hover {
+  cursor: pointer;
+}
+
 .modal-close {
   position: fixed;
-  top: 30px;
-  right: 60px;
-  font-weight: bold;
-  cursor: pointer;
+  font-size: 1.3em;
+  top: 55px;
+  right: 70px;
   transition: visibility 0s, opacity 0.3s; 
 }
 
-.modal-close:hover {
-  opacity: 0.4;
-}
-
 .item-container {
-  width: 20vw;
-  height: 20vw;
-  cursor: pointer;
+  margin-right: 2vw; 
+  width: 17vw;
+  height: 17vw;
 }
 
 .item-container:hover {
@@ -353,89 +415,97 @@ video {
   transition: opacity 0.3s; 
 }
 
-button {
-  position: relative;
-  display: inline-block;
+button, .modal-add-blog input, .modal-add-blog textarea, fieldset {
   border: none;
-  margin: 0;
-  text-decoration: none;
-  color: #ffffff;
-  font-family: sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding: 0;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-button:hover .overlay {
-  opacity: 1;
-}
+button {
+  outline:0;
+  position: relative;
+  color: #ffffff;
+  font-size: 1rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} 
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
   bottom: 0;
   right: 0;
-  height: 100%;
   background-color: rgba(0, 0, 0, 0.65);
-  opacity: 0;
   transition: 0.5s ease;
   z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .overlay h2 {
-  letter-spacing: 1px;
   font-size: 1.2em;
   line-height: 1.4em;
-  width: 85%;
 }
 
 .h-10vh{
   height: 10vh;
-  width: 100%;
+} 
+
+#add-blog-btn {
+  background: url("images/add-icon.jpg");
+  margin-top: 6.5vh;
+  margin-bottom: 6.5vh;
+  width: 5.5vw;
+  height: 5.5vw;
+  border-radius: 50%;
+  transition: 120ms;
+} 
+
+.home, .food, .projects, #add-blog-btn {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.item-container img {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.home, .food, .projects {
+  height: 100vh;
+  background-attachment: fixed;
 }
+
+#add-blog-btn:hover, .modal-close:hover, .modal-add-blog button:hover {
+  opacity: 0.4;
+}
+
 
 @media only screen and (max-width: 800px) {   
-  .home {
-    height: 75vh;
-  }
-
-  .food{
+  .home, .food {
     height: 75vh;
   }
 }
 
 @media(min-width:786px) {
-  .container {
-    width: 80%;
-    margin: auto;
-    justify-content: space-between;
+  .container, .portfolio-items, .content-col-right, .content-col-right-items{ 
     display: flex;
-    padding-top: 4em;
+  }
+
+  .container, .portfolio-items {
+    margin: auto;
+  }
+
+  .container, .portfolio-items, .content-col-right .about-img {
+    width: 80%;
+  }
+
+  .container, .portfolio-items {
+    padding-top: 4em
+  }
+
+  .container {
+    justify-content: space-between;
+  }
+
+  main, h1, h2, h3, .modal-bg, .main-content, .h-10vh, img {
+    width: 100%;
   }
 
   .portfolio-items {
-    width: 80%;
-    margin: auto;
     justify-content: flex-start;
-    display: flex;
-    padding-top: 4em;
     flex-wrap: wrap;
   }
 
@@ -446,20 +516,12 @@ button:hover .overlay {
   
   .content-col-right {
     width: 40%;
-    display: flex;
     justify-content: flex-end;
     text-align: right;
-  }
-
-  .content-col-right-items {
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
   }
 
   .content-col-right .about-img {
     margin-left: 0;
     margin-right: 0;
-    width: 80%;
   }
 }

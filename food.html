@@ -4,72 +4,95 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css" />
     <title>JLee</title>
+    <script src="custom.js"></script>
 </head>
 <body>
-    <div class="food">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="food.html" id="active">FOOD</a></li>
-                    <li><a href="projects.html">PROJECTS</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
-    <section>
-        <div class="food-content-container">
-            <h1>My Life and Food</h1>
-            <p>
-                 Food for me is a hobby, a passtime, a stress reliever, a way to meet new people, 
-                 a way to see old friends, an experience, a challenge, and a way to experience diversity.
-            </p>
+    <main >
+        <div class="food">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="food.html" id="active">FOOD</a></li>
+                        <li><a href="projects.html">PROJECTS</a></li>
+                    </ul>
+                </nav>
+            </header>
         </div>
-    </section>
-
-    <section>
-        <!-- /* Photo by SJ Baren on Unsplash */ -->
-        <div class="food-content-container">           
-            <img src="images/food-1.jpg" alt="Korean BBQ" class="width-100">
-            <div class="spacing-50px"></div>
-            <h2>Korean Food</h2>
-            <p>
-                My parents both grew up in rural Korea. They weren't shy about what they ate,
-                everything from pig's feet to chicken gizzards, they chefed it up and served it. 
-                My favorite Korean food is 삼겹살 (Samgyupsal), which is pictured above. It's had with
-                a few shots of soju and a group full of friends. It's basically uncured bacon.
-                It's name 삼겹살 is a description of the food itself. The first character 삼 means three, 겹 means layer, and 살 means fat, the literal translation being three layer fat. 
-            </p>
-        </div>
-    </section>
+        <section>
+            <div class="food-content-container">
+                <h1>My Life and Food</h1>
+                <p>
+                        Food for me is a hobby, a passtime, a stress reliever, a way to meet new people, 
+                        a way to see old friends, an experience, a challenge, and a way to experience diversity.
+                </p>
+            </div>
+        </section>
     
-    <section>
-        <!-- /* Photo by Lightscape on Unsplash */ -->
-        <div class="food-content-container">
-            <img src="images/food-2.jpg" alt="Pho" class="width-100">
-            <div class="spacing-50px"></div>
-            <h2>Pho</h2>
-            <p>
-                My favorite noodle soup, Pho. Similar to another Korean soup, ox tail soup. The long simmered
-                broth has so much body. If I drank I'm sure I'd use it as a hangover cure. Nothing beats Pho 
-                on a cold rainy Seattle day.
-            </p>
-        </div>
-    </section>
+        <section>
+            <!-- /* Photo by SJ Baren on Unsplash */ -->
+            <div class="food-content-container">           
+                <img src="images/food-1.jpg" alt="Korean BBQ" >
+                <div class="spacing-50px"></div>
+                <h2>Korean Food</h2>
+                <p>
+                    My parents both grew up in rural Korea. They weren't shy about what they ate,
+                    everything from pig's feet to chicken gizzards, they chefed it up and served it. 
+                    My favorite Korean food is 삼겹살 (Samgyupsal), which is pictured above. It's had with
+                    a few shots of soju and a group full of friends. It's basically uncured bacon.
+                    It's name 삼겹살 is a description of the food itself. The first character 삼 means three, 겹 means layer, and 살 means fat, the literal translation being three layer fat. 
+                </p>
+            </div>
+        </section>
+        
+        <section>
+            <!-- /* Photo by Lightscape on Unsplash */ -->
+            <div class="food-content-container">
+                <img src="images/food-2.jpg" alt="Pho">
+                <div class="spacing-50px"></div>
+                <h2>Pho</h2>
+                <p>
+                    My favorite noodle soup, Pho. Similar to another Korean soup, ox tail soup. The long simmered
+                    broth has so much body. If I drank I'm sure I'd use it as a hangover cure. Nothing beats Pho 
+                    on a cold rainy Seattle day.
+                </p>
+            </div>
+        </section>
+    
+        <section>
+            <div class="food-content-container">
+                <img src="images/food-3.jpg" alt="fried chicken">
+                <div class="spacing-50px"></div>
+                <!-- /* Photo by Brian Chan on Unsplash */ -->
+                <h2>Fried Chicken</h2>
+                <p>
+                    Fried. Mother. Loving. Chicken. Golden. Brown. Crispy. Hot. Greasy. It's the best
+                    way to eat chicken, American, cutlet, Korean, Thai, it's all good, and I love it all. 
+                </p>
+            </div>
+        </section>
+    </main>
 
-    <section>
-        <div class="food-content-container">
-            <img src="images/food-3.jpg" alt="fried chicken" class="width-100">
-            <div class="spacing-50px"></div>
-            <!-- /* Photo by Brian Chan on Unsplash */ -->
-            <h2>Fried Chicken</h2>
-            <p>
-                Fried. Mother. Loving. Chicken. Golden. Brown. Crispy. Hot. Greasy. It's the best
-                way to eat chicken, American, cutlet, Korean, Thai, it's all good, and I love it all. 
-            </p>
+    <div class="modal-bg">
+        <div class="modal-add-blog">
+            <main id="add-blog-modal-window">   
+                <h2>Add New Blog Post</h2>
+                <div class="modal-close">
+                    X
+                </div>
+                <fieldset>
+                    <input id="new-img-src" type="text" placeholder="Image link"> 
+                    <input id="new-title-text" type="text" placeholder="Title">
+                    <textarea name="blogPostContent" id="new-content-text" cols="30" rows="10" placeholder="Blog Post Content"></textarea>
+                    <button class="post-blog-btn" id="post-new-blog">Post</button>
+                </fieldset>
+            </main>
         </div>
-    </section>
+    </div>
 
+    <button id="add-blog-btn">
+    </button>
+    
     <footer>
         <p>
             Portions of this page ©2019 Jaesuk Lee, other attribution cited in page source
