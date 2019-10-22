@@ -8,20 +8,35 @@ img {
   image-orientation: from-image;
 }
 
-::-webkit-scrollbar {
-  width: 11px;
+body::-webkit-scrollbar {
+  width: 13px;
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background: #888;
 }
 
-::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   background: #d1d1d1;
+}
+
+.modal::-webkit-scrollbar{
+	width: 10px;
+}
+
+.modal::-webkit-scrollbar-thumb
+{
+	border-radius: 8px;
+  background-color: #888;
+  background-clip: padding-box;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 body {
@@ -248,11 +263,12 @@ footer p {
 }
 
 .modal {
-  border-radius: 8px;
-  width: 95%; 
+  border-radius: 5px;
+  width: 97%; 
+  height: 95vh;
 }
 
-.modal, .modal-add-blog {
+.modal-add-blog {
   height: 90vh;
 }
 
