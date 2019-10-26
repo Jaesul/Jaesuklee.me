@@ -69,18 +69,31 @@ main  section:nth-child(2n + 1) {
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),url("images/projects.jpg");
 }
 
-header, .food-content-container, .modal-bg, .modal .container, .side-by-side, .side-by-side .content,
-.overlay {
+.food-content-container, .modal-bg, .modal .container, .side-by-side, .side-by-side .content,
+.overlay, nav {
   display: flex;
 }
 
-header, .food-content-container, .modal-bg, .overlay {
+
+.food-content-container, .modal-bg, .overlay, nav {
   justify-content: center;
 }
 
 header {
-  padding: 2em 0 0 0;
+  position: fixed;
+}
+
+nav {
+  padding: 1.6em 0;
   z-index: 2;
+  background: transparent;
+  transition: 250ms ease-in;
+}
+
+.nav-scrolled {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  padding: 0.8em 0;
 }
 
 nav ul, a, ol, .container h2, button, fieldset {
@@ -99,6 +112,8 @@ nav ul {
 nav li {
   padding-right: 1em;
   padding-left: 1em;
+  width: 20%;
+  text-align: center;
   display: inline-block;
 }
 
@@ -109,6 +124,7 @@ a, button {
 nav a {
   line-height: 1em;
   color: white;
+  transition: 0.2s ease-in-out; 
 }
 
 nav a:hover {
@@ -516,7 +532,7 @@ button {
     justify-content: space-between;
   }
 
-  main, h1, h2, h3, .modal-bg, .main-content, .h-10vh, img {
+  main, h1, h2, h3, .modal-bg, .main-content, .h-10vh, img, header {
     width: 100%;
   }
 

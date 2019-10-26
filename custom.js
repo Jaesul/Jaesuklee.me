@@ -3,31 +3,49 @@
 
   window.addEventListener("load", init);
 
+  let options = {
+    rootMargin: "-450px 0px 0px 0px"
+  }
+
   function init() {
     var modalBtns = document.querySelectorAll('.modal-btn');
     var modalBgs = document.querySelectorAll('.modal-bg');
     var modalCloses = document.querySelectorAll('.modal-close');
+    var homepage = document.querySelector(".home");
+    var nav = document.querySelector('nav');
 
-    for (let modalBtn of modalBtns) {
-      modalBtn.addEventListener('click',function(){
-        let targetModal = document.getElementById(this.dataset.target);
-        targetModal.classList.add('bg-active');
+    let observer = new IntersectionObserver(
+    function(entries) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          nav.classList.add('nav-scrolled');
+        } else {
+          nav.classList.remove('nav-scrolled');
+        } 
       });
+    }, 
+    options);
+
+    if(homepage) {
+      observer.observe(homepage);
     }
 
-    for (let modalClose of modalCloses) {
-      modalClose.addEventListener('click',function(){
-        for (let modalBg of modalBgs) {
-          modalBg.classList.remove('bg-active')
-        }
-      });
+    if (modalBgs.length > 0) {
+      for (let modalBtn of modalBtns) {
+        modalBtn.addEventListener('click',function(){
+          let targetModal = document.getElementById(this.dataset.target);
+          targetModal.classList.add('bg-active');
+        });
+      }
+  
+      for (let modalClose of modalCloses) {
+        modalClose.addEventListener('click',function(){
+          for (let modalBg of modalBgs) {
+            modalBg.classList.remove('bg-active')
+          }
+        });
+      }
     }
-
-    let addBlogBtn = document.getElementById("add-blog-btn");
-    addBlogBtn.addEventListener("click", addBlogPost);
-
-    let closeBlogAdd = document.querySelector('.modal-close')
-
   }
 
   function addBlogPost() {
