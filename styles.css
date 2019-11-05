@@ -473,9 +473,8 @@ footer p {
 }
 
 .item-container {
-  margin-right: 2vw; 
-  width: 17vw;
-  height: 17vw;
+  width: 18.5vw;
+  height: 18.5vw;
 }
 
 .item-container:hover {
@@ -574,7 +573,7 @@ button {
   }
 
   .portfolio-items {
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 
