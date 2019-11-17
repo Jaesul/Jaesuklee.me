@@ -1,6 +1,10 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
 
-html, .modal-bg, .item-container img {
+html, .modal-bg {
+  height: 100%;
+}
+
+.item-container img {
   height: 100%;
 }
 
@@ -473,13 +477,15 @@ footer p {
 }
 
 .item-container {
-  width: 18.5vw;
-  height: 18.5vw;
-}
+  transition: all 0.2s ease-in-out;
+} 
 
 .item-container:hover {
   opacity: 1.5;
-  transition: opacity 0.3s; 
+}
+
+.one-one:hover {
+  transform: scale(1.04);
 }
 
 button, .modal-add-blog input, .modal-add-blog textarea, fieldset {
@@ -501,7 +507,7 @@ button {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.65);
-  transition: 0.5s ease;
+  transition: all 0.5s ease-in-out;
   z-index: 10;
 }
 
@@ -547,8 +553,37 @@ button {
 }
 
 @media(min-width:786px) {
-  .container, .portfolio-items, .content-col-right, .content-col-right-items{ 
+
+  .one-one {
+    height: 0;
+    overflow: hidden;
+    padding-top: 100%;
+    background: white;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .one-one-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-btn{
+    height: 100%;
+    width: 100%
+  }
+
+  .container, .content-col-right, .content-col-right-items{ 
     display: flex;
+  }
+
+  .portfolio-items {
+    display: grid;
+    grid-gap: 1vw;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .container, .portfolio-items {
@@ -570,11 +605,6 @@ button {
 
   main, h1, h2, h3, .modal-bg, .main-content, .h-10vh, img {
     width: 100%;
-  }
-
-  .portfolio-items {
-    justify-content: space-between;
-    flex-wrap: wrap;
   }
 
   .content-col {
