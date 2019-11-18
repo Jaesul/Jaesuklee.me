@@ -25,6 +25,7 @@
       observer.observe(homepage);
     }
 
+    var body = document.querySelector('body');
     var modalBtns = document.querySelectorAll('.modal-btn');
     var modalBgs = document.querySelectorAll('.modal-bg');
     var modalCloses = document.querySelectorAll('.modal-close');
@@ -35,11 +36,17 @@
         modalBtn.addEventListener('click',function(){
           let targetModal = document.getElementById(this.dataset.target);
           targetModal.classList.add('bg-active');
+          body.classList.toggle('scroll-lock');
+          nav.querySelector('ul').classList.toggle('scroll-lock');
         });
       }
   
       for (let modalClose of modalCloses) {
-        modalClose.addEventListener('click',function(){
+        modalClose.addEventListener('click',function() {
+          setTimeout(() => {
+            body.classList.toggle('scroll-lock');
+            nav.querySelector('ul').classList.toggle('scroll-lock');
+          }, 400);
           for (let modalBg of modalBgs) {
             modalBg.classList.remove('bg-active')
           }
