@@ -1,6 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
 
-html, .modal-bg {
+html, .modal-bg, .item-container {
   height: 100%;
 }
 
@@ -88,6 +88,7 @@ main section:nth-child(2n + 1) {
 }
 
 header {
+  z-index: 1000;
   position: fixed;
   width: 100%;
 }
@@ -109,8 +110,7 @@ nav {
 }
 
 .nav-scrolled {
-  background-color: rgba(0, 0, 0, 0.6);
-  /* box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  background-color: rgb(41, 41, 41);
   padding: 0.8em 0;
 }
 
@@ -202,7 +202,7 @@ main {
 .content-col p {
   padding-top: 2em;
   line-height: 24px;
-  font-size: .8rem;
+  font-size: 0.9em;
 }
 
 .content-col-right-items a {
@@ -372,7 +372,7 @@ footer p {
 } 
 
 .modal .container {
-  padding-top: 0;
+  padding-top: 10vh;
 }
 
 .modal .container {
@@ -380,7 +380,7 @@ footer p {
 }
 
 .container h2 {
-  margin: 10vh 0 10vh 0;
+  margin: 10vh 0 0 0;
   font-size: 2.2em;
   line-height: 2em;
   text-align: left;
@@ -407,7 +407,7 @@ footer p {
 }
 
 .modal .side-by-side:nth-child(2n) {
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(247, 247, 247);
 }
 
 .normal {
@@ -545,6 +545,10 @@ button {
   opacity: 0.4;
 }
 
+.flex-start {
+  align-items: flex-start;
+}
+
 
 @media only screen and (max-width: 800px) {   
   .home, .food {
@@ -553,6 +557,15 @@ button {
 }
 
 @media(min-width:786px) {
+  .section-title {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 0px;
+  }
+
+  .section-title h1 {
+    margin: 0;
+  }
 
   .one-one {
     height: 0;
@@ -594,8 +607,12 @@ button {
     width: 80%;
   }
 
-  .container, .portfolio-items {
+  .container {
     padding-top: 4em
+  }
+
+  .container {
+    padding-bottom: 4em;
   }
 
   .container {
