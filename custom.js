@@ -8,12 +8,6 @@
   }
 
   function init() {
-    var modalBtns = document.querySelectorAll('.modal-btn');
-    var modalBgs = document.querySelectorAll('.modal-bg');
-    var modalCloses = document.querySelectorAll('.modal-close');
-    var homepage = document.querySelector(".home");
-    var nav = document.querySelector('nav');
-
     let observer = new IntersectionObserver(
     function(entries) {
       entries.forEach(entry => {
@@ -25,10 +19,16 @@
       });
     }, 
     options);
-
+    
+    var homepage = document.querySelector(".home");
     if(homepage) {
       observer.observe(homepage);
     }
+
+    var modalBtns = document.querySelectorAll('.modal-btn');
+    var modalBgs = document.querySelectorAll('.modal-bg');
+    var modalCloses = document.querySelectorAll('.modal-close');
+    var nav = document.querySelector('nav');
 
     if (modalBgs.length > 0) {
       for (let modalBtn of modalBtns) {
