@@ -28,6 +28,44 @@
     }, 
     options);
 
+    let carousel = document.querySelector('.img-slider');
+    let carosuelImgs = document.querySelectorAll('.img-slider img');
+
+    let prevBtn = document.getElementById('prev');
+    let nextBtn = document.getElementById('next');
+
+    let counter = 1;
+    let size = 30;
+    console.log(size);
+
+    carousel.style.transform = 'translateX(-' + (counter * size) +'vw)';
+
+    nextBtn.addEventListener('click', ()=>{
+      if (counter >= carosuelImgs.length - 1) return;
+      carousel.style.transition = 'transform 0.3s ease-in-out';
+      counter++;
+      carousel.style.transform = 'translateX(-' + (counter * size) +'vw)';
+    })
+
+    prevBtn.addEventListener('click', ()=> {
+      if (counter <= 0) return;
+      carousel.style.transition = 'transform 0.3s ease-in-out';
+      counter--;
+      carousel.style.transform = 'translateX(-' + (counter * size) +'vw)';
+    })
+
+    carousel.addEventListener('transitionend', () => {
+      if(carosuelImgs[counter].id === 'first-clone') {
+        counter = 1;
+        carousel.style.transition = 'none';
+        carousel.style.transform = 'translateX(-' + (counter * size) +'vw)';
+      } else if (carosuelImgs[counter].id === 'last-clone') {
+        counter = carosuelImgs.length - 2;
+        carousel.style.transition = 'none';
+        carousel.style.transform = 'translateX(-' + (counter * size) +'vw)';
+      }
+    })
+
     let navBtns = document.querySelectorAll('nav a');
     for (let btn of navBtns) {
       btn.addEventListener('click', activeATag)
